@@ -1,0 +1,219 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "mySQL + Express + Passport Boilerplate",
+    "description": "An interactive list of api and html routes used in the ",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "tags": [
+    {
+      "name": "API",
+      "description": "API for users in the system"
+    },
+    {
+      "name": "HTML",
+      "description": "API for users in the system"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json", "text/plain"],
+  "produces": ["application/json", "text/plain"],
+  "paths": {
+    "/api/signup": {
+      "post": {
+        "tags": ["API"],
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Signup credentials",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/Auth_response"
+            }
+          }
+        }
+      }
+    },
+    "/api/login": {
+      "post": {
+        "tags": ["API"],
+        "description": "Log user into session.",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Login credentials",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "User session begun",
+            "schema": {
+              "$ref": "#/definitions/Auth_response"
+            }
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "tags": ["API"],
+        "summary": "Log out of session.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user_data": {
+      "get": {
+        "tags": ["API"],
+        "summary": "Get the user email of the active session.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User_data"
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": ["HTML"],
+        "summary": "Get landing page (login/signup or members)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "get": {
+        "tags": ["HTML"],
+        "summary": "Get login/signup page",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/members": {
+      "get": {
+        "tags": ["HTML"],
+        "summary": "Get members page with user data",
+        "parameters": {
+          "- in": "path",
+          "schema": {
+            "$ref": "#/definitions/Auth_response"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "required": ["email", "password"],
+      "properties": {
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string",
+          "format": "password"
+        }
+      }
+    },
+    "User_data": {
+      "required": ["email", "_id"],
+      "properties": {
+        "_id": {
+          "type": "integer",
+          "format": "uuid",
+          "uniqueItems": true
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "uniqueItems": true
+        }
+      }
+    },
+    "Auth_response": {
+      "required": ["email", "_id"],
+      "properties": {
+        "_id": {
+          "type": "integer",
+          "format": "uuid",
+          "uniqueItems": true
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string",
+          "format": "password"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}
