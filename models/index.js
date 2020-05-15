@@ -31,16 +31,21 @@ let sequelize = {};
  */
 const connectDb = async () => {
   try {
-    if (config.use_env_variable) {
-      sequelize = new Sequelize(process.env[config.use_env_variable]);
-    } else {
-      sequelize = new Sequelize(
-        config.database,
-        config.username,
-        config.password,
-        config
-      );
+    if (process.env.NODE_ENV === "production") {
+      config = {
+        username: process.env.JAWSDB_USER,
+        password: process.env.JAWSDB_PASS,
+        database: process.env.JAWSDB_DB,
+        host: process.env.JAWSDB_HOST,
+        dialect: "mysql",
+      };
     }
+    sequelize = new Sequelize(
+      config.database,
+      config.username,
+      config.password,
+      config
+    );
   } catch (err) {
     console.log(err);
   }

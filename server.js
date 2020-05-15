@@ -1,3 +1,4 @@
+require("dotenv").config();
 /** Requiring express */
 const express = require("express");
 /** Requiring express-session for use with passport library */
