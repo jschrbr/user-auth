@@ -24,7 +24,7 @@ let config = require(__dirname + "/../config/config.json")[env];
 let db = {};
 let sequelize = {};
 
-console.log(process.env.NODE_ENV);
+console.log(process.env.NODE_ENV === "production");
 
 /**stuff
  * @async
