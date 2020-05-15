@@ -23,7 +23,7 @@ const env = process.env.NODE_ENV || "development";
 let config = require(__dirname + "/../config/config.json")[env];
 let db = {};
 let sequelize = {};
-
+console.log(process.env.JAWSDB_HOST);
 /**stuff
  * @async
  * @func
