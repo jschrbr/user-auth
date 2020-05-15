@@ -24,8 +24,6 @@ let config = require(__dirname + "/../config/config.json")[env];
 let db = {};
 let sequelize = {};
 
-console.log(process.env.NODE_ENV === "production");
-
 /**stuff
  * @async
  * @func
@@ -34,13 +32,11 @@ console.log(process.env.NODE_ENV === "production");
 const connectDb = async () => {
   try {
     if (process.env.NODE_ENV === "production") {
-      config = {
-        username: process.env.JAWSDB_USER,
-        password: process.env.JAWSDB_PASS,
-        database: process.env.JAWSDB_DB,
-        host: process.env.JAWSDB_HOST,
-        dialect: "mysql",
-      };
+      config.username = process.env.JAWSDB_USER;
+      config.password = process.env.JAWSDB_PASS;
+      config.database = process.env.JAWSDB_DB;
+      config.host = process.env.JAWSDB_HOST;
+      config.dialect = "mysql";
     }
     console.log(config.database);
     sequelize = new Sequelize(
