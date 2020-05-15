@@ -38,7 +38,6 @@ const connectDb = async () => {
       config.host = process.env.JAWSDB_HOST;
       config.dialect = "mysql";
     }
-    console.log(config.database);
     sequelize = new Sequelize(
       config.database,
       config.username,
