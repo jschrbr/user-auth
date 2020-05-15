@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>passport</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/search.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script> -->
+    <script src="scripts/fuse.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme.css">
+    
+    
+    
+<svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/>
+                <path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/>
+            </g>
+        </symbol>
+    </defs>
+</svg>
+
+</head>
+<body>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><h3>Modules</h3><ul><li><a href="module-api-handlers.html">api-handlers</a><ul class='methods'><li data-type='method'><a href="module-api-handlers.html#.userLogin">userLogin</a></li></ul></li><li><a href="module-api-routes.html">api-routes</a></li><li><a href="module-db.html">db</a><ul class='methods'><li data-type='method'><a href="module-db.html#~associateModels">associateModels</a></li><li data-type='method'><a href="module-db.html#~connectDb">connectDb</a></li><li data-type='method'><a href="module-db.html#~readModels">readModels</a></li></ul></li><li><a href="module-html-handlers.html">html-handlers</a><ul class='methods'><li data-type='method'><a href="module-html-handlers.html#.getSignup">getSignup</a></li></ul></li><li><a href="module-html-routes.html">html-routes</a></li><li><a href="module-isAuthenticated.html">isAuthenticated</a></li><li><a href="module-passport.html">passport</a></li><li><a href="module-user.html">user</a><ul class='methods'><li data-type='method'><a href="module-user.html#validPassword">validPassword</a></li><li data-type='method'><a href="module-user.html#~addHook">addHook</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3><ul><li><a href="global.html#app">app</a></li><li><a href="global.html#db">db</a></li><li><a href="global.html#express">express</a></li><li><a href="global.html#passport">passport</a></li><li><a href="global.html#PORT">PORT</a></li><li><a href="global.html#session">session</a></li><li><a href="global.html#swaggerDocument">swaggerDocument</a></li><li><a href="global.html#swaggerUi">swaggerUi</a></li></ul></div>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">passport</h1>
+    
+
+    
+
+
+
+
+<section>
+
+
+<header>
+    
+        
+            
+        
+            
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Routes module for api requests.</p></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="config_passport.js.html">config/passport.js</a>, <a href="config_passport.js.html#line1">line 1</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="module:passport"><span class="type-signature"></span>module:passport<span class="type-signature"></span></h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Blend two colors together.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>app</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first color, in hexadecimal format.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="config_passport.js.html">config/passport.js</a>, <a href="config_passport.js.html#line58">line 58</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+<div class="param-desc">
+    <p>The blended color.</p>
+</div>
+
+
+ 
+    </div>
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+  
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script>
+var list = [{"title":"api-handlers","link":"<a href=\"module-api-handlers.html\">api-handlers</a>"},{"title":"module:api-handlers.userLogin","link":"<a href=\"module-api-handlers.html#.userLogin\">module:api-handlers.userLogin &rtrif; undefined</a>"},{"title":"api-routes","link":"<a href=\"module-api-routes.html\">api-routes</a>"},{"title":"db","link":"<a href=\"module-db.html\">db</a>"},{"title":"module:db~associateModels","link":"<a href=\"module-db.html#~associateModels\">module:db~associateModels &rtrif; undefined</a>"},{"title":"module:db~connectDb","link":"<a href=\"module-db.html#~connectDb\">module:db~connectDb &rtrif; undefined</a>"},{"title":"module:db~readModels","link":"<a href=\"module-db.html#~readModels\">module:db~readModels &rtrif; undefined</a>"},{"title":"html-handlers","link":"<a href=\"module-html-handlers.html\">html-handlers</a>"},{"title":"module:html-handlers.getSignup","link":"<a href=\"module-html-handlers.html#.getSignup\">module:html-handlers.getSignup &rtrif; undefined</a>"},{"title":"html-routes","link":"<a href=\"module-html-routes.html\">html-routes</a>"},{"title":"isAuthenticated","link":"<a href=\"module-isAuthenticated.html\">isAuthenticated</a>"},{"title":"passport","link":"<a href=\"module-passport.html\">passport</a>"},{"title":"user","link":"<a href=\"module-user.html\">user</a>"},{"title":"module:user#validPassword","link":"<a href=\"module-user.html#validPassword\">module:user &rtrif; validPassword</a>"},{"title":"module:user~addHook","link":"<a href=\"module-user.html#~addHook\">module:user~addHook &rtrif; undefined</a>"},{"title":"app","link":"<a href=\"global.html#app\">Global &rtrif; app</a>"},{"title":"db","link":"<a href=\"global.html#db\">Global &rtrif; db</a>"},{"title":"express","link":"<a href=\"global.html#express\">Global &rtrif; express</a>"},{"title":"passport","link":"<a href=\"global.html#passport\">Global &rtrif; passport</a>"},{"title":"PORT","link":"<a href=\"global.html#PORT\">Global &rtrif; PORT</a>"},{"title":"session","link":"<a href=\"global.html#session\">Global &rtrif; session</a>"},{"title":"swaggerDocument","link":"<a href=\"global.html#swaggerDocument\">Global &rtrif; swaggerDocument</a>"},{"title":"swaggerUi","link":"<a href=\"global.html#swaggerUi\">Global &rtrif; swaggerUi</a>"}];
+setupSearch(list)
+</script>
+
+ 
+<script type="text/javascript" src="scripts/misc.js"></script>
+</body>
+</html>
