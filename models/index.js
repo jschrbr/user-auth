@@ -24,8 +24,6 @@ let config = require(__dirname + "/../config/config.json")[env];
 let db = {};
 let sequelize = {};
 
-console.log([process.env.JAWSDB_URL]);
-
 /**stuff
  * @async
  * @func
